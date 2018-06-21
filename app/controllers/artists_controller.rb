@@ -1,4 +1,4 @@
-class ArtistsController < ApplicationController
+class ArtistController < ApplicationController
 
   get '/artists' do
     @artist = Artist.all
