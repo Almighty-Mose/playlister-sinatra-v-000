@@ -2,7 +2,7 @@ require_relative './concerns/slugifiable.rb'
 
 class Genre < ActiveRecord::Base
   include Slugifiable::InstanceMethods
-  include Slugifiable::ClassMethods
+  extend Slugifiable::ClassMethods
 
   has_many :song_genres
   has_many :artists, through: :songs
