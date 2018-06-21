@@ -6,7 +6,7 @@ class Artist < ActiveRecord::Base
     name.gsub(" ", "-").downcase
   end
 
-  def find_by_slug
+  def self.find_by_slug
 
   end
 end
