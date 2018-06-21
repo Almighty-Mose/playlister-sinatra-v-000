@@ -1,4 +1,4 @@
-require_relative './slugifiable.rb'
+require_relative './concerns/slugifiable.rb'
 
 class Genre < ActiveRecord::Base
   include Slugifiable
