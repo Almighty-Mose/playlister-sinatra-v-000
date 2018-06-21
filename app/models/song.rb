@@ -1,3 +1,4 @@
+require_relative './concerns/slugifiable.rb'
 class Song < ActiveRecord::Base
   include Slugifiable::InstanceMethods
   extend Slugifiable::ClassMethods
