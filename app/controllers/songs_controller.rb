@@ -18,6 +18,11 @@ class SongController < ApplicationController
     erb :'songs/show'
   end
 
+  get 'songs/:slug/edit' do
+    @song = Song.find_by_slug(params[:slug])
+    erb :'songs/edit'
+  end
+
   post '/songs' do
     #binding.pry
     @song = Song.create(:name => params["Name"])
@@ -28,11 +33,6 @@ class SongController < ApplicationController
     flash[:message] = "Successfully created song."
 
     redirect "/songs/#{@song.slug}"
-  end
-
-  get 'songs/:slug/edit' do
-    @song = Song.find_by_slug(params[:slug])
-    erb :'songs/edit'
   end
 
   patch '/songs/:slug' do
